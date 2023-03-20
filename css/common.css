@@ -1,0 +1,382 @@
+
+body{
+    position: relative;
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    /* 글자 간격조절 */
+    line-height:1.2;
+    font-family: 'Nanum Gothic', sans-serif;
+
+}
+/* 상단 sub 메뉴바 */
+a{
+    text-decoration: none;
+}
+
+.inner{
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+
+}
+.btn{
+    width: 130px;
+    padding: 10px;
+    border:1px solid #333;
+    border-radius: 4px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    display:block;
+    transition: 0.4s;
+}
+.btn:hover{
+    background-color:#333;
+    color: white;
+}
+/* 잘 보이게 하려고 -- 두개쓰는 것 */
+.btn.btn--reverse{
+    background-color: #333;
+    color: white;
+}
+.btn.btn--reverse:hover{
+    background-color: transparent;
+    color: #333;
+}
+.btn.btn--brown{
+    color:#592B18;
+    border-color: #592B18;
+}
+.btn.btn--brown:hover{
+    background-color:#592B18;
+    color: #fff;
+}
+.btn.btn--gold{
+    color:#D9AA8A;
+    border-color:#D9AA8A;
+}
+.btn.btn--gold:hover{
+    background-color: #D9AA8A;
+    color: #fff;
+}
+.btn.btn--white{
+    color:#fff;
+    border-color:#fff;
+}
+.btn.btn--white:hover{
+    background-color:#fff;
+    color: #333;
+}
+.btn.btn--pink{
+    color: #e54360;
+    border-color: #e54360;
+}
+.btn.btn--pink:hover{
+    background-color: #e54360;
+    color:#fff;
+}
+.back-to-postion{
+    opacity: 0;
+    transition: 1s;
+}
+.back-to-postion.to-right{
+    transform: translateX(-150px);
+}
+.back-to-postion.to-left{
+    transform:translateX(150px);
+}
+.show .back-to-postion{
+    opacity: 1;
+    transform: translateX(0);
+}
+/* 헤더 */
+#top_layout{
+    background-color: #f6f5f0;
+    border-bottom: 1px solid #c8c8c8;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top:0;
+    z-index: 10;
+}
+#top_layout > .inner{
+    height: 120px;
+    /* background-color:paleturquoise; */
+
+}
+/* 로고 부분 */
+#top_layout .inner .logo{
+    height: 75px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    margin: auto;
+    /* display: none; */
+}
+/* 상단 서브 메뉴 */
+#top_layout .inner .sub_menu{
+    display: flex;
+    position: absolute;
+    right: 0;
+    top:10px;
+}
+/* layout 상단바 */
+#top_layout .inner .sub_menu ul.util_menu{
+    display: flex;
+
+}
+/* 상단 서브 메뉴에 줄부분 */
+#top_layout .inner .sub_menu ul.util_menu li::before{
+    content: "";
+    width: 1px;
+    height: 12px;
+    background-color:gray;
+    display: block;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    margin: auto;
+}
+#top_layout .inner .sub_menu ul.util_menu li:first-child::before{
+    display: none;
+}
+
+#top_layout .inner .sub_menu ul.util_menu li {
+    position: relative;
+    
+}
+/* 상단 서브메뉴 색하고 설정 */
+#top_layout .inner .sub_menu ul.util_menu li a{
+    /* background-color: antiquewhite; */
+    font-size: 12px;
+    padding: 10px 15px;
+    color: gray;
+    display: block;
+
+}
+#top_layout .inner .sub_menu ul.util_menu li a:hover{
+    color: #111;
+}
+/* 서치바 부분 */
+#top_layout .inner .sub_menu .search_bar{
+    /* background-color: chartreuse; */
+    position: relative;
+
+}
+#top_layout .inner .sub_menu .search_bar input{
+    width: 36px;
+    height: 34px;
+    padding:5px 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    transition: width 0.4s;
+}
+/* 서치바 눌렀을때 */
+#top_layout .inner .sub_menu .search_bar input:focus{
+    width:190px;
+    border-color: #007042;
+
+}
+/* 서치바 돋보기모양 */
+#top_layout .inner .sub_menu .search_bar .material-symbols-sharp{
+    position: absolute;
+    top:0;
+    bottom:0;
+    right: 5px;
+    height: 24px;
+    margin:auto;
+    transition: opacity 0.4s;
+}
+
+#top_layout .inner .sub_menu .search_bar.focused .material-symbols-sharp{
+    opacity: 0;
+
+} 
+#top_layout .inner .main_menu{
+    display: flex;
+    position: absolute;
+    bottom:0;
+    right: 0;
+    margin: 0 auto;
+
+}
+/* 메인메뉴 글씨설정 */
+#top_layout .inner .main_menu .item_name{
+    padding:20px;
+    font-family: 'KCCChassam';
+    font-size: 16px;
+    font-weight: 200;
+}
+/* 메인메뉴 눌렸을때 설정 */
+#top_layout .inner .main_menu .item:hover .item_name{
+    background-color:#333333;
+    color: #f6f5f0;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+
+}
+#top_layout .inner .main_menu .item .item_contents{
+    width: 100%;
+    position: fixed;
+    left:0;
+    display: none;
+    top:120px;
+
+}
+#top_layout .inner .main_menu .item:hover .item_contents{
+    display: block;
+}
+/* 상단 배경 넓게 */
+#top_layout .inner .main_menu .item .item_contents .contents_menu{
+    background-color:#333333;
+    height: 300px;
+
+}
+#top_layout .inner .main_menu .item .item_contents .contents_text{
+    background-color: cornflowerblue;
+    height: 100px;
+}
+#top_layout .inner .main_menu .item .item_contents .contents_menu > ul{
+    display: flex;
+    padding: 20px 0;
+
+}
+#top_layout .inner .main_menu .item .item_contents .contents_menu > ul > li{
+    width: 220px;
+}
+#top_layout .inner .main_menu .item .item_contents .contents_menu > ul > li h4{
+    padding: 3px 0 12px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+/* 메뉴 글자 크기 조정 여기서 했음 */
+#top_layout .inner .main_menu .item .item_contents .contents_menu > ul > li li{
+    padding: 5px 0;
+    font-size: 12px;
+    color:#c1c1c1;
+    /* color:rgb(34, 31, 31); */
+    cursor: pointer;
+}
+#top_layout .inner .main_menu .item .item_contents .contents_menu > ul > li li:hover{
+    color:#fff;
+    text-decoration: underline;
+}
+
+#top_layout .inner .main_menu .item .item_contents .contents_text{
+    /* background-color:#007042; */
+    /* height: 100px; */
+    padding: 20px 0;
+    background-image: url('../images/main_menu_pattern.jpg');
+    /* opacity: 0.5; */
+}
+#top_layout .inner .main_menu .item .item_contents .contents_text h4{
+    font-size: 14px ;
+    font: 600;
+    color: #c1c1c1;
+
+}
+#top_layout .inner .main_menu .item .item_contents .contents_text p{
+    font-size: 12px;
+    margin: 4px 0 12px 0;
+    color:#007042;
+}
+#top_layout .badges{
+    position: absolute;
+    right: 15px;
+    top:130px ;
+}
+#top_layout .badge{
+    text-align: center;
+
+}
+#top_layout .badge img{
+    border-radius: 8px;
+
+}
+
+
+
+
+/* footer */
+#foot_layout{
+    background-color:#272727;
+    border-top: 1px solid #333;
+ 
+ }
+ #foot_layout .inner{
+     padding: 60px 0 60px 0;
+ }
+ #foot_layout .menu{
+     position: relative;
+     display: flex;
+     justify-content: center;
+     margin-bottom:20px;
+ }
+ #foot_layout .menu li a{
+     color: #ccc;
+     font-size: 12px;
+     font-weight: 700;
+     padding:12px;
+ }
+ #foot_layout .menu li:first-child a{
+     color: #669900;
+ }
+ #foot_layout .menu li::before{
+     content: "";
+     width: 3px;
+     height: 3px;
+     background-color: #555;
+     display: block;
+     border-radius: 50%;
+     position: absolute ;
+     margin:auto;
+     top:0;
+     bottom:0;
+ 
+ }
+ #foot_layout .menu li:first-child::before{
+     display: none;
+ }
+ #foot_layout .inner .btn-group{
+     display:flex;
+     justify-content: center;
+     margin-bottom:30px ;
+ }
+ #foot_layout .inner .btn-group .btn{
+     font-size: 12px;
+     margin-right:10px;
+ }
+ #foot_layout .inner .btn-group .btn:last-child{
+     margin-right: 0;
+ }
+ #foot_layout .inner .info{
+     text-align: center;
+    
+ }
+ #foot_layout .inner .info span{
+     color: #c1c1c1;
+     font-size: 12px;
+     margin-right: 20px;
+ }
+ #foot_layout .inner .info span:nth-last-child(){
+     margin-right: 0;
+ }
+ #foot_layout .inner .copyright{
+     text-align: center;
+     font-size: 12px;
+     color: #c1c1c1;
+     margin-top: 12px;
+ }
+ #foot_layout .inner .logo{
+     display: block;
+     margin: 30px auto 0;
+ }
