@@ -1,0 +1,94 @@
+.signin{
+    margin-top: 120px;
+    padding: 100px 0 150px;
+    background-image: url(../images/signin_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    /* 스크롤 할때 이미지 전체적으로 나오게 */
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.signin h1{
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+
+}
+.signin .signin_card{
+    width: 500px;
+    background-color:azure;
+    margin: auto;
+    border-radius: 5px;
+    color: #555;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+}
+.signin .signin_card form{
+    padding: 25px 30px;
+}
+    
+.signin .signin_card h2{
+    text-align: center;
+    font-size: 18px;
+    padding: 30px 0;
+    border-bottom: 1px solid #ddd;
+}
+.signin .signin_card h2 span{
+    color: #006633;
+}
+.signin .signin_card input{
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.signin .signin_card input[type="submit"]{
+    background-color: #006633;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+.signin .signin_card p{
+    font-size: 12px;
+    color:#006633;
+    text-align: center;
+}
+
+.signin .signin_card .actions{
+    display: flex;
+    border-top: 1px solid #ddd;
+    /* position: relative; */
+}
+.signin .signin_card .actions a{
+    flex-grow: 1;
+    text-align: center;
+    padding: 20px 0;
+    color: #555;
+    font-size: 14px;
+    position: relative;
+
+}
+.signin .signin_card .actions a::before{
+    content: "";
+    width: 1px;
+    height: 14px;
+    display: block;
+    background-color: #ddd;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    margin: auto;
+}
+.signin .signin_card .actions a:first-child::before{
+    display: none;
+}
+.signin .signin_card .actions a:hover{
+    text-decoration: underline;
+}
